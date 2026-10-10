@@ -1,22 +1,21 @@
 import random
-class Game:
-    def __init__(self):
-        self.number = random.randint(1,100)
-        self.attempts = 0
 
-        def play(self):
-            print("Number Gussing Game")
-            print("Guess a number between 1 and 100!")
+number = random.randint(1, 100)
+attempts = 0
 
+print("🎮 Welcome to Guess the Number Game!")
+print("I have selected a number between 1 and 100.")
 
-            while True:
-                
+while True:
+    guess = int(input("Enter your guess: "))
+    attempts += 1
 
-
-
-guess = int(input("Guess a number between 1 and 100: "))
-
-if guess == number:
-    print("🎉 Correct! You won!")
-else:
-    print("❌ Wrong! The number was", number)
+    if guess < number:
+        print("Too low! Try a bigger number.")
+    elif guess > number:
+        print("Too high! Try a smaller number.")
+    else:
+        print("🎉 Congratulations! You guessed the number!")
+        print("The number was:", number)
+        print("Total attempts:", attempts)
+        break
